@@ -1,29 +1,26 @@
 <?php
-header("Access-Control-Allow-Origin:*");
-header("Content-Type: application/json");
-include_once("../../config/db.php");
-include_once("../../model/question.php");
-
-$db = new db();
-$connect = $db->connect();
+include_once("../header/header.php");
 
 $question = new Question($connect);
 $read = $question->read();
 $num = $read->rowCount();
 $question_array['data'] = [];
-if ($num > 0) {
+if ($num > 0) {;
     while ($row = $read->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $question_array['data'][] =
-            array(
-                'id' => $row['id'],
-                'title' => $row['title'],
-                'case_a' => $row['case_a'],
-                'case_a' => $row['case_a'],
-                'case_b' => $row['case_b'],
-                'case_c' => $row['case_c'],
-                'answer' => $row['answer'],
-            );
+        $question_array['data'][] = array(
+            'id' => $id,
+            'title' => $title,
+            'case_a' => $case_a,
+            'case_a' => $case_a,
+            'case_b' => $case_b,
+            'case_c' => $case_c,
+            'answer' => $answer
+        );
     }
     echo json_encode($question_array);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        // Handle the error however you want
+        die("Failed to encode data as JSON: " . json_last_error_msg());
+    }
 }

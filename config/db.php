@@ -8,18 +8,17 @@ class db
     private  $servername = "localhost";
     private    $username = "root";
     private    $password = "";
-    private    $db_name = "rest_full_api";
-    private    $charset = "UTF-8";
+    private    $dbname = "rest_full_api";
     public $conn;
     public function connect()
     {
 
         $this->conn = null;
         try {
-            $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->db_name;charset = $this->charset", $this->username, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname;charset=utf8", $this->username, $this->password);
             // set the PDO error mode to exception
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully";
+            // $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // echo "Connected successfully";
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
