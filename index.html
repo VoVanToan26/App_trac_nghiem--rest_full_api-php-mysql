@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-</head>
-<body>
-    
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz</title>
+        <style>
+            .d-none {
+                display: none;
+            }
+
+            .highlight {
+                background: yellow;
+            }
+
+            ul,
+            ol {
+
+                list-style: none;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            button {}
+
+            h1 {
+                text-align: center;
+                margin: 5px auto;
+            }
+
+            .parent {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .button {
+                width: 100px;
+                height: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Ôn luyện câu hỏi trắc nghiệm Ứng dụng RESTFULL API cho PHP</h1>
+        <h2 id="total_score"></h2>
+        <div class="question_container d-none" id="question_container">
+            <h2 id="title"></h2>
+            <ul>
+                <fieldset id="group1">
+                    <li>
+                        <input type="radio" name="group1" value="a" class="the_answer" id="case_a">
+                        <label for="case_a" id="content_case_a"></label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group1" value="b" class="the_answer" id="case_b">
+                        <label for="case_b" id="content_case_b"></label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group1" value="c" class="the_answer" id="case_c">
+                        <label for="case_c" id="content_case_c"></label>
+                    </li>
+                    <li>
+                        <input type="radio" name="group1" value="d" class="the_answer" id="case_d">
+                        <label for="case_d" id="content_case_d"></label>
+                    </li>
+                </fieldset>
+
+            </ul>
+        </div>
+        <div class="parent">
+            <button id="submitBtn">Bắt đầu</button>
+        </div>
+    </body>
+    <script type="text/javascript" src="view/js/index.js"></script>
+
 </html>

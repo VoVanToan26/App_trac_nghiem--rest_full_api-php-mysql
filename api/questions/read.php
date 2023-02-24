@@ -4,17 +4,17 @@ include_once("../header/header.php");
 $question = new Question($connect);
 $read = $question->read();
 $num = $read->rowCount();
-$question_array['data'] = [];
+$question_array['questions'] = [];
 if ($num > 0) {;
     while ($row = $read->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $question_array['data'][] = array(
+        $question_array['questions'][] = array(
             'id' => $id,
             'title' => $title,
             'case_a' => $case_a,
-            'case_a' => $case_a,
             'case_b' => $case_b,
             'case_c' => $case_c,
+            'case_d' => $case_d,
             'answer' => $answer
         );
     }
