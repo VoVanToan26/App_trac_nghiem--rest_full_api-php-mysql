@@ -61,7 +61,7 @@ submitBtn.addEventListener("click", async () => {
             });
             container.classList.add("d-none");
             scoreTitleElement.classList.remove("d-none");
-            scoreTitleElement.innerHTML = "so diem cua ban là" + score;
+            scoreTitleElement.innerHTML = "so diem cua ban là: " + score;
             submitBtn.innerHTML = "Xem lai";
             review = true;
             questionsIndex = 0;
